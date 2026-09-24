@@ -1,0 +1,19 @@
+{
+  "name": "tuneforge-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The static TuneForge Android app showcase and legal pages, ready for GitHub Pages.",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "linkedom": "^0.18.13"
+  }
+}

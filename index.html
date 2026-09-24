@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050807">
+  <meta name="color-scheme" content="dark">
+  <title>TuneForge — Precision tuner &amp; musician’s toolkit for Android</title>
+  <meta name="description" content="Find your perfect pitch with TuneForge for Android. A precision tuner for guitar, bass, ukulele and mandolin, with custom tunings and a six-tool musician’s toolkit.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TuneForge">
+  <meta property="og:title" content="TuneForge — Find your perfect pitch.">
+  <meta property="og:description" content="A precision tuner and a complete musician’s toolkit, crafted for Android.">
+  <meta property="og:image" content="assets/TuneForge_Feature_Graphic_1024x500.png">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="500">
+  <meta property="og:image:alt" content="TuneForge — Find your perfect pitch. A green and charcoal precision tuner.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TuneForge — Find your perfect pitch.">
+  <meta name="twitter:description" content="A precision tuner and a complete musician’s toolkit, crafted for Android.">
+  <meta name="twitter:image" content="assets/TuneForge_Feature_Graphic_1024x500.png">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"TuneForge","operatingSystem":"Android","applicationCategory":"MultimediaApplication","description":"A precision tuner for guitar, bass, ukulele and mandolin, with custom tunings, a metronome, drone, fret calculator, string tension tool, transposer and chord library."}</script>
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></symbol>
+    <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5v14"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 15V3"/><path d="m7 10 5 5 5-5"/><path d="M20 21H4"/></symbol>
+    <symbol id="i-smartphone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="i-audio" viewBox="0 0 24 24"><path d="M2 10v3"/><path d="M6 6v11"/><path d="M10 3v18"/><path d="M14 8v7"/><path d="M18 5v13"/><path d="M22 10v3"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></symbol>
+    <symbol id="i-list-checks" viewBox="0 0 24 24"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M10 5H3"/><path d="M12 19H3"/><path d="M14 3v4"/><path d="M16 17v4"/><path d="M21 12h-9"/><path d="M21 19h-5"/><path d="M21 5h-7"/><path d="M8 10v4"/><path d="M8 12H3"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-volume" viewBox="0 0 24 24"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.364 18.364a9 9 0 0 0 0-12.728"/></symbol>
+    <symbol id="i-guitar" viewBox="0 0 24 24"><path d="m11.9 12.1 4.514-4.514"/><path d="M20.1 2.3a1 1 0 0 0-1.4 0l-1.114 1.114A2 2 0 0 0 17 4.828v1.344a2 2 0 0 1-.586 1.414A2 2 0 0 1 17.828 7h1.344a2 2 0 0 0 1.414-.586L21.7 5.3a1 1 0 0 0 0-1.4z"/><path d="m6 16 2 2"/><path d="M8.23 9.85A3 3 0 0 1 11 8a5 5 0 0 1 5 5 3 3 0 0 1-1.85 2.77l-.92.38A2 2 0 0 0 12 18a4 4 0 0 1-4 4 6 6 0 0 1-6-6 4 4 0 0 1 4-4 2 2 0 0 0 1.85-1.23z"/></symbol>
+    <symbol id="i-timer" viewBox="0 0 24 24"><path d="M10 2h4"/><path d="m12 14 3-3"/><circle cx="12" cy="14" r="8"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="TuneForge, back to top"><img src="assets/brand.webp" width="144" height="145" alt=""><span>Tune<span class="brand-forge">Forge</span></span></a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="#tuner">Tuner</a>
+        <a href="#tunings">Tunings</a>
+        <a href="#toolkit">Toolkit</a>
+        <a href="#appearance">Appearance</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-primary btn-sm header-cta" href="#download" data-store-link>Get TuneForge</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile" hidden>
+    <a href="#tuner">Tuner <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+    <a href="#tunings">Tunings <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+    <a href="#toolkit">Toolkit <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+    <a href="#appearance">Appearance <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+    <a href="#faq">FAQ <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+    <a class="btn btn-primary btn-lg mobile-menu-cta" href="#download" data-store-link>Get TuneForge</a>
+  </nav>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <div class="hero-media-inner">
+          <picture>
+            <source media="(max-width: 699px)" srcset="assets/hero/hero-tall-800.webp 800w, assets/hero/hero-tall-1200.webp 1200w" sizes="100vw" width="800" height="941">
+            <img src="assets/hero/hero-wide-1920.webp" srcset="assets/hero/hero-wide-1280.webp 1280w, assets/hero/hero-wide-1920.webp 1920w, assets/hero/hero-wide-2560.webp 2560w, assets/hero/hero-wide-3840.webp 3840w" sizes="(min-width: 1100px) 100vw, 150vw" width="1920" height="1080" alt="" fetchpriority="high" decoding="async">
+          </picture>
+          <span class="hero-glow"></span>
+          <span class="hero-particles">
+            <i style="--x:47%;--y:72%;--t:11s;--d:-1s;--dx:18px"></i><i style="--x:52%;--y:30%;--t:13s;--d:-6s;--dx:-12px"></i><i style="--x:57%;--y:84%;--t:9s;--d:-3s;--dx:10px"></i><i style="--x:61%;--y:14%;--t:12s;--d:-9s;--dx:22px;--s:2px"></i><i style="--x:70%;--y:78%;--t:10s;--d:-4s;--dx:-18px"></i><i style="--x:76%;--y:20%;--t:14s;--d:-2s;--dx:14px;--s:2px"></i><i style="--x:81%;--y:66%;--t:9.5s;--d:-7s;--dx:-10px"></i><i style="--x:86%;--y:36%;--t:12.5s;--d:-5s;--dx:16px;--s:4px"></i><i style="--x:89%;--y:58%;--t:11.5s;--d:-8s;--dx:-14px;--s:2px"></i><i style="--x:50%;--y:52%;--t:15s;--d:-10s;--dx:12px;--s:2px"></i>
+          </span>
+          <span class="hero-pill is-flat">
+            <svg class="i pill-up"><use href="#i-arrow-up"/></svg><svg class="i pill-down"><use href="#i-arrow-down"/></svg><svg class="i pill-check"><use href="#i-check"/></svg>
+            <span class="hero-pill-label">Tune up</span>
+            <span class="hero-pill-cents">−12.4¢</span>
+          </span>
+        </div>
+      </div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <p class="hero-badge rise" style="--i:0"><span class="pulse-dot" aria-hidden="true"></span>Tuner &amp; musician’s toolkit for Android</p>
+          <h1 id="hero-title"><span class="line"><span style="--i:1">Find your</span></span><span class="line"><span class="hero-gradient" style="--i:2">perfect pitch.</span></span></h1>
+          <p class="hero-lead rise" style="--i:3">A precision tuner and a complete musician’s toolkit, crafted for Android. Tune your guitar, bass, ukulele or mandolin in seconds — then keep time, explore new tunings and make it your own.</p>
+          <div class="hero-actions rise" style="--i:4">
+            <a class="btn btn-primary btn-lg btn-store" href="#download" data-store-link>
+              <svg class="i" aria-hidden="true"><use href="#i-download"/></svg>
+              <span class="btn-store-text"><small data-store-kicker>Coming soon to</small> <strong>Google Play</strong></span>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="#tuner">See it in action <svg class="i" aria-hidden="true"><use href="#i-arrow-down"/></svg></a>
+          </div>
+          <div class="hero-instruments rise" style="--i:5">
+            <span class="hero-instruments-label">Made for</span>
+            <ul>
+              <li>Guitar</li><li>Bass</li><li>Ukulele</li><li>Mandolin</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="TuneForge at a glance">
+      <div class="container">
+        <ul class="stats-grid">
+          <li class="stat"><strong data-count="3">3</strong><span>Tuning modes</span><small>Auto strings, Guided and Chromatic</small></li>
+          <li class="stat"><strong data-count="4">4</strong><span>Instruments</span><small>Guitar, bass, ukulele and mandolin</small></li>
+          <li class="stat"><strong data-count="6">6</strong><span>Musician’s tools</span><small>From metronome to chord library</small></li>
+          <li class="stat"><strong data-count="10">10</strong><span>Accent colours</span><small>Make it look like yours</small></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section tuner-section" id="tuner" aria-labelledby="tuner-title">
+      <div class="container split">
+        <div class="tuner-visual reveal">
+          <span class="orb" aria-hidden="true"></span>
+          <figure class="device device-back">
+            <div class="device-screen"><img src="assets/screens/tuner.webp" width="600" height="1300" loading="lazy" decoding="async" alt="TuneForge tuner listening in Auto strings mode, set to guitar standard tuning with the capo off and a 440 hertz A4 reference"></div>
+          </figure>
+          <figure class="device device-front">
+            <div class="device-screen"><img src="assets/screens/pitch-feedback.webp" width="600" height="1300" loading="lazy" decoding="async" alt="TuneForge tuner reading E2 at 82.10 hertz against a target of 82.41 hertz, prompting Tune up at minus 6.5 cents"></div>
+          </figure>
+        </div>
+        <div class="tuner-copy">
+          <header class="section-head reveal">
+            <p class="eyebrow"><span class="num">01</span> The tuner</p>
+            <h2 id="tuner-title">Tune with confidence.<br><span class="dim">Play with freedom.</span></h2>
+            <p class="lead">A responsive dial shows exactly where you are and which way to go — so you spend less time tuning and more time playing.</p>
+          </header>
+          <ul class="feature-list">
+            <li class="feature reveal">
+              <span class="feature-icon" aria-hidden="true"><svg class="i"><use href="#i-audio"/></svg></span>
+              <div><h3>Three ways to tune</h3><p>Auto strings follows whichever string you play. Guided and Chromatic modes are a tap away when you want a different approach.</p></div>
+            </li>
+            <li class="feature reveal">
+              <span class="feature-icon" aria-hidden="true"><svg class="i"><use href="#i-gauge"/></svg></span>
+              <div><h3>Precision you can see</h3><p>Your note, its frequency and the target, down to the cent — with a clear prompt telling you which way to turn.</p></div>
+            </li>
+            <li class="feature reveal">
+              <span class="feature-icon" aria-hidden="true"><svg class="i"><use href="#i-list-checks"/></svg></span>
+              <div><h3>String-by-string progress</h3><p>Every string is ticked off as it comes into tune, so you always know what’s left. Reset for a fresh start at any time.</p></div>
+            </li>
+            <li class="feature reveal">
+              <span class="feature-icon" aria-hidden="true"><svg class="i"><use href="#i-sliders"/></svg></span>
+              <div><h3>Your reference, your capo</h3><p>Set the A4 reference and your capo position right from the tuner, and TuneForge keeps up.</p></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tunings-section" id="tunings" aria-labelledby="tunings-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span class="num">02</span> Tunings</p>
+          <h2 id="tunings-title">Explore new tunings.<br><span class="dim">Or make your own.</span></h2>
+          <p class="lead">Guitar, bass, ukulele and mandolin each have their own library — standard, dropped, alternate and extended-range tunings, with search to find them fast.</p>
+        </header>
+        <div class="tunings-layout" data-tabs>
+          <div class="tab-list reveal" role="tablist" aria-label="Tuning library" aria-orientation="vertical">
+            <button class="tab" id="tab-guitar" type="button" role="tab" aria-selected="true" aria-controls="tunings-panel" aria-labelledby="tab-guitar-title" aria-describedby="tab-guitar-desc" data-screen="guitar-tunings">
+              <span class="tab-index">01</span><span class="tab-title" id="tab-guitar-title">Guitar tunings</span>
+              <span class="tab-desc" id="tab-guitar-desc"><span>Start from Standard, then drop to Drop D, Drop C, Drop B or Double Drop D in a single tap.</span></span>
+            </button>
+            <button class="tab" id="tab-alternate" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="tunings-panel" aria-labelledby="tab-alternate-title" aria-describedby="tab-alternate-desc" data-screen="alternate-tunings">
+              <span class="tab-index">02</span><span class="tab-title" id="tab-alternate-title">Alternate tunings</span>
+              <span class="tab-desc" id="tab-alternate-desc"><span>A different kind of sound: Open C, DADGAD, half-step and full-step down, and 7-string standard.</span></span>
+            </button>
+            <button class="tab" id="tab-bass" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="tunings-panel" aria-labelledby="tab-bass-title" aria-describedby="tab-bass-desc" data-screen="bass-tunings">
+              <span class="tab-index">03</span><span class="tab-title" id="tab-bass-title">Bass tunings</span>
+              <span class="tab-desc" id="tab-bass-desc"><span>Go deeper with Standard, Drop D and Drop C for bass, plus 5-string and 6-string standard.</span></span>
+            </button>
+            <button class="tab" id="tab-custom" type="button" role="tab" aria-selected="false" tabindex="-1" aria-controls="tunings-panel" aria-labelledby="tab-custom-title" aria-describedby="tab-custom-desc" data-screen="custom-tuning">
+              <span class="tab-index">04</span><span class="tab-title" id="tab-custom-title">Custom tunings</span>
+              <span class="tab-desc" id="tab-custom-desc"><span>Set every string yourself — a semitone or an octave at a time — add or remove strings, then name it and save it.</span></span>
+            </button>
+          </div>
+          <div class="tunings-stage reveal" id="tunings-panel" role="tabpanel" aria-labelledby="tab-guitar" tabindex="0">
+            <span class="orb" aria-hidden="true"></span>
+            <figure class="device">
+              <div class="device-screen screens">
+                <img class="is-active" data-screen="guitar-tunings" src="assets/screens/guitar-tunings.webp" width="600" height="1300" loading="lazy" decoding="async" alt="TuneForge guitar tuning library with Standard selected, and Drop D, Drop C, Drop B and Double Drop D below">
+                <img data-screen="alternate-tunings" aria-hidden="true" src="assets/screens/alternate-tunings.webp" width="600" height="1300" loading="lazy" decoding="async" alt="TuneForge alternate guitar tunings, including Open C, DADGAD, Half-Step Down, Full-Step Down and 7-String Standard">
+                <img data-screen="bass-tunings" aria-hidden="true" src="assets/screens/bass-tunings.webp" width="600" height="1300" loading="lazy" decoding="async" alt="TuneForge bass tunings, including Standard, Drop D, Drop C and 5-String Standard">
+                <img data-screen="custom-tuning" aria-hidden="true" src="assets/screens/custom-tuning.webp" width="600" height="1300" loading="lazy" decoding="async" alt="Creating a custom tuning in TuneForge, with controls to move each string by a semitone or an octave">
+              </div>
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Standard</span><span>Drop D</span><span>DADGAD</span><span>Open C</span><span>Drop C</span><span>Half-Step Down</span><span>Drop B</span><span>7-String Standard</span><span>Double Drop D</span><span>Full-Step Down</span><span>5-String Bass</span><span>6-String Bass</span>
+          <span>Standard</span><span>Drop D</span><span>DADGAD</span><span>Open C</span><span>Drop C</span><span>Half-Step Down</span><span>Drop B</span><span>7-String Standard</span><span>Double Drop D</span><span>Full-Step Down</span><span>5-String Bass</span><span>6-String Bass</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section toolkit-section" id="toolkit" aria-labelledby="toolkit-title">
+      <div class="container">
+        <header class="section-head center reveal">
+          <p class="eyebrow"><span class="num">03</span> The toolkit</p>
+          <h2 id="toolkit-title">More than a tuner.<br><span class="dim">Six tools, one app.</span></h2>
+          <p class="lead">Everything a practice session needs, in one place — for keeping time, training your ear, dialling in your setup and finding the right shapes.</p>
+        </header>
+        <ul class="tools-grid" data-scroll-region aria-labelledby="toolkit-title">
+          <li class="tool-card reveal" id="tool-metronome">
+            <img src="assets/tools/metronome.webp" width="720" height="960" loading="lazy" decoding="async" alt="">
+            <span class="tool-tag">Timing</span>
+            <div class="tool-card-body"><h3>Metronome</h3><p>Keep perfect time with subdivisions, tap tempo and a built-in speed trainer.</p></div>
+          </li>
+          <li class="tool-card reveal" id="tool-fret-calculator" style="--delay:.08s">
+            <img src="assets/tools/fretcalculator.webp" width="720" height="960" loading="lazy" decoding="async" alt="">
+            <span class="tool-tag">Measure</span>
+            <div class="tool-card-body"><h3>Fret calculator</h3><p>Exact fret positions for any scale length, to within 0.01 mm.</p></div>
+          </li>
+          <li class="tool-card reveal" id="tool-drone" style="--delay:.16s">
+            <img src="assets/tools/drone.webp" width="720" height="960" loading="lazy" decoding="async" alt="">
+            <span class="tool-tag">Reference</span>
+            <div class="tool-card-body"><h3>Drone</h3><p>A steady reference pitch to play or sing against, anywhere from B0 to F6.</p></div>
+          </li>
+          <li class="tool-card reveal" id="tool-string-tension">
+            <img src="assets/tools/stringtension.webp" width="720" height="960" loading="lazy" decoding="async" alt="">
+            <span class="tool-tag">Setup</span>
+            <div class="tool-card-body"><h3>String tension</h3><p>See how hard a plain steel string pulls, for any gauge you choose.</p></div>
+          </li>
+          <li class="tool-card reveal" id="tool-transposer" style="--delay:.08s">
+            <img src="assets/tools/capotransposer.webp" width="720" height="960" loading="lazy" decoding="async" alt="">
+            <span class="tool-tag">Harmony</span>
+            <div class="tool-card-body"><h3>Transposer</h3><p>Find the right chord shapes for any capo position, without the mental maths.</p></div>
+          </li>
+          <li class="tool-card reveal" id="tool-chord-library" style="--delay:.16s">
+            <img src="assets/tools/chordshapes.webp" width="720" height="960" loading="lazy" decoding="async" alt="">
+            <span class="tool-tag">Shapes</span>
+            <div class="tool-card-body"><h3>Chord library</h3><p>See exactly where your fingers go, one clear chord shape at a time.</p></div>
+          </li>
+        </ul>
+
+        <div class="spotlight reveal">
+          <div class="spotlight-copy">
+            <p class="eyebrow"><span class="num">Spotlight</span> Metronome</p>
+            <h3>Find your rhythm.<br><span class="dim">Follow the pulse.</span></h3>
+            <p>Tap in a tempo, choose a time signature and let a clear visual pulse carry you through every bar.</p>
+            <ul class="check-list">
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Tap tempo to match any song</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>2/4, 3/4, 4/4, 5/4 and 6/8 time</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Practice mode with a speed trainer</li>
+              <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Tempo markings, like Andante, at a glance</li>
+            </ul>
+            <div class="bpm" aria-hidden="true">
+              <strong>100</strong><span class="bpm-meta"><span>BPM</span><span>Andante · 4/4</span></span>
+              <span class="beats"><i style="--n:0"></i><i style="--n:1"></i><i style="--n:2"></i><i style="--n:3"></i></span>
+            </div>
+          </div>
+          <div class="spotlight-stage">
+            <span class="orb" aria-hidden="true"></span>
+            <figure class="device">
+              <div class="device-screen">
+                <img src="assets/screens/metronome.webp" width="600" height="1300" loading="lazy" decoding="async" alt="TuneForge metronome at 100 BPM, Andante, in 4/4 time, with tap tempo and practice controls">
+                <img class="pulse-frame" src="assets/screens/metronome-pulse.webp" width="600" height="1300" loading="lazy" decoding="async" alt="" aria-hidden="true">
+              </div>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section appearance-section" id="appearance" aria-labelledby="appearance-title">
+      <div class="container split split-reverse">
+        <div class="appearance-stage reveal">
+          <span class="orb orb-tint" aria-hidden="true"></span>
+          <figure class="device">
+            <div class="device-screen"><img src="assets/screens/appearance.webp" width="600" height="1300" loading="lazy" decoding="async" alt="TuneForge appearance settings with ten accent colours to choose from and launcher icon options"></div>
+          </figure>
+        </div>
+        <div class="appearance-copy">
+          <header class="section-head reveal">
+            <p class="eyebrow"><span class="num">04</span> Appearance</p>
+            <h2 id="appearance-title">Your tools.<br><span class="dim">Your style.</span></h2>
+            <p class="lead">Choose an accent colour for the whole app, pick the launcher icon for your home screen, and decide whether the fine instrument grid sits behind your screens.</p>
+          </header>
+          <div class="swatch-panel reveal">
+            <div class="swatches" role="group" aria-label="Preview an accent colour">
+              <button class="swatch" type="button" aria-pressed="true" data-colour="#3ddb83" style="--c:#3ddb83"><span class="swatch-dot"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg></span><span class="swatch-name">Green</span></button>
+              <button class="swatch" type="button" aria-pressed="false" data-colour="#2ed9e0" style="--c:#2ed9e0"><span class="swatch-dot"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg></span><span class="swatch-name">Turquoise</span></button>
+              <button class="swatch" type="button" aria-pressed="false" data-colour="#5db7fe" style="--c:#5db7fe"><span class="swatch-dot"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg></span><span class="swatch-name">Sky</span></button>
+              <button class="swatch" type="button" aria-pressed="false" data-colour="#7f9cfe" style="--c:#7f9cfe"><span class="swatch-dot"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg></span><span class="swatch-name">Blue</span></button>
+              <button class="swatch" type="button" aria-pressed="false" data-colour="#b691fe" style="--c:#b691fe"><span class="swatch-dot"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg></span><span class="swatch-name">Violet</span></button>
+              <button class="swatch" type="button" aria-pressed="false" data-colour="#f88fb8" style="--c:#f88fb8"><span class="swatch-dot"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg></span><span class="swatch-name">Rose</span></button>
+              <button class="swatch" type="button" aria-pressed="false" data-colour="#fd8b6d" style="--c:#fd8b6d"><span class="swatch-dot"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg></span><span class="swatch-name">Coral</span></button>
+              <button class="swatch" type="button" aria-pressed="false" data-colour="#f5b940" style="--c:#f5b940"><span class="swatch-dot"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg></span><span class="swatch-name">Amber</span></button>
+              <button class="swatch" type="button" aria-pressed="false" data-colour="#c8e44b" style="--c:#c8e44b"><span class="swatch-dot"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg></span><span class="swatch-name">Lime</span></button>
+              <button class="swatch" type="button" aria-pressed="false" data-colour="#d9dce3" style="--c:#d9dce3"><span class="swatch-dot"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg></span><span class="swatch-name">Silver</span></button>
+            </div>
+            <p class="swatch-caption"><svg class="i" aria-hidden="true"><use href="#i-palette"/></svg><span>Tap a colour to preview it here. <span class="swatch-current">Selected: <strong id="swatch-name" aria-live="polite">Green</strong></span></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section details-section" id="details" aria-labelledby="details-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span class="num">05</span> The details</p>
+          <h2 id="details-title">The little things.<br><span class="dim">Done properly.</span></h2>
+        </header>
+        <ul class="details-grid reveal">
+          <li class="detail"><span class="feature-icon" aria-hidden="true"><svg class="i"><use href="#i-search"/></svg></span><h3>Search every library</h3><p>Type a name and jump straight to the tuning you’re after.</p></li>
+          <li class="detail"><span class="feature-icon" aria-hidden="true"><svg class="i"><use href="#i-volume"/></svg></span><h3>Hear it first</h3><p>Listen to a tuning’s notes before you commit to it.</p></li>
+          <li class="detail"><span class="feature-icon" aria-hidden="true"><svg class="i"><use href="#i-guitar"/></svg></span><h3>Extended range</h3><p>7-string guitar and 5- and 6-string bass tunings are ready to go.</p></li>
+          <li class="detail"><span class="feature-icon" aria-hidden="true"><svg class="i"><use href="#i-smartphone"/></svg></span><h3>Your launcher icon</h3><p>Choose the TuneForge icon that looks best on your home screen.</p></li>
+          <li class="detail"><span class="feature-icon" aria-hidden="true"><svg class="i"><use href="#i-grid"/></svg></span><h3>Instrument grid</h3><p>A fine measurement grid behind the screens — on or off, it’s your call.</p></li>
+          <li class="detail"><span class="feature-icon" aria-hidden="true"><svg class="i"><use href="#i-timer"/></svg></span><h3>Tempo markings</h3><p>See the classical tempo name, like Andante, as you set the beat.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section faq-section" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-layout">
+        <header class="section-head faq-head reveal">
+          <p class="eyebrow"><span class="num">06</span> FAQ</p>
+          <h2 id="faq-title">Before you<br><span class="dim">strike a chord.</span></h2>
+          <p class="lead">A few things you might like to know before your first session.</p>
+        </header>
+        <div class="faq-list reveal">
+          <details name="faq">
+            <summary>Which instruments can I tune with TuneForge?<span class="faq-toggle" aria-hidden="true"><svg class="i"><use href="#i-plus"/></svg></span></summary>
+            <div class="faq-answer"><p>Guitar, bass, ukulele and mandolin each have their own tuning library. For anything else, Chromatic mode shows the nearest note to whatever you play.</p></div>
+          </details>
+          <details name="faq">
+            <summary>Can I use alternate or custom tunings?<span class="faq-toggle" aria-hidden="true"><svg class="i"><use href="#i-plus"/></svg></span></summary>
+            <div class="faq-answer"><p>Yes. Alongside Standard you’ll find dropped tunings such as Drop D and Drop C, alternate tunings like DADGAD and Open C, down-tuned options and extended-range tunings. You can also build your own: move each string by a semitone or an octave, add or remove strings, and save it to your library.</p></div>
+          </details>
+          <details name="faq">
+            <summary>What’s in the musician’s toolkit?<span class="faq-toggle" aria-hidden="true"><svg class="i"><use href="#i-plus"/></svg></span></summary>
+            <div class="faq-answer"><p>Six tools: a metronome with subdivisions, tap tempo and a speed trainer; a fret calculator; a reference drone; a plain-string tension tool; a transposer for playing with a capo; and a chord library.</p></div>
+          </details>
+          <details name="faq">
+            <summary>Why does TuneForge need my microphone?<span class="faq-toggle" aria-hidden="true"><svg class="i"><use href="#i-plus"/></svg></span></summary>
+            <div class="faq-answer"><p>The tuner listens to your instrument to work out which note you’re playing and how close it is to pitch. Sound is analysed in real time on your device — it isn’t recorded or uploaded. You can read more in our <a href="privacy.html#microphone">Privacy Policy</a>.</p></div>
+          </details>
+          <details name="faq">
+            <summary>Can I change how TuneForge looks?<span class="faq-toggle" aria-hidden="true"><svg class="i"><use href="#i-plus"/></svg></span></summary>
+            <div class="faq-answer"><p>Yes. Choose from ten accent colours — Green, Turquoise, Sky, Blue, Violet, Rose, Coral, Amber, Lime and Silver — pick your launcher icon, and switch the instrument grid background on or off.</p></div>
+          </details>
+          <details name="faq">
+            <summary>Where can I get TuneForge?<span class="faq-toggle" aria-hidden="true"><svg class="i"><use href="#i-plus"/></svg></span></summary>
+            <div class="faq-answer"><p id="faq-release-copy" data-faq-release>TuneForge is coming soon to Android. As soon as it’s available, the download buttons on this page will take you straight to Google Play.</p></div>
+          </details>
+          <details name="faq">
+            <summary>Does this website track me?<span class="faq-toggle" aria-hidden="true"><svg class="i"><use href="#i-plus"/></svg></span></summary>
+            <div class="faq-answer"><p>No. This site doesn’t use cookies, analytics or tracking of any kind, and our fonts and images are served from the site itself. Our <a href="privacy.html#website">Privacy Policy</a> has the details.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="download" id="download" aria-labelledby="download-title">
+      <div class="download-rings" aria-hidden="true"><span></span><span></span></div>
+      <div class="container download-inner reveal">
+        <img class="download-icon" src="assets/app-icon-256.webp" width="256" height="256" loading="lazy" decoding="async" alt="TuneForge app icon">
+        <p class="eyebrow">Your next session starts here</p>
+        <h2 id="download-title">Good music<br>starts <span class="accent-text">in tune.</span></h2>
+        <p class="lead">Bring a little precision to your passion. Your instrument will thank you.</p>
+        <div class="download-actions">
+          <a class="btn btn-primary btn-lg btn-store" href="#release-status" data-store-link>
+            <svg class="i" aria-hidden="true"><use href="#i-download"/></svg>
+            <span class="btn-store-text"><small data-store-kicker>Coming soon to</small> <strong>Google Play</strong></span>
+          </a>
+        </div>
+        <p class="release-status" id="release-status" tabindex="-1" data-release-copy>TuneForge is getting ready for Google Play. Stay tuned.</p>
+      </div>
+      <div class="download-phones" aria-hidden="true">
+        <figure class="device"><div class="device-screen"><img src="assets/screens/guitar-tunings.webp" width="600" height="1300" loading="lazy" decoding="async" alt=""></div></figure>
+        <figure class="device"><div class="device-screen"><img src="assets/screens/pitch-feedback.webp" width="600" height="1300" loading="lazy" decoding="async" alt=""></div></figure>
+        <figure class="device"><div class="device-screen"><img src="assets/screens/toolkit.webp" width="600" height="1300" loading="lazy" decoding="async" alt=""></div></figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label="TuneForge, back to top"><img src="assets/brand.webp" width="144" height="145" loading="lazy" alt=""><span>Tune<span class="brand-forge">Forge</span></span></a>
+        <p>A precision tuner and musician’s toolkit for Android. Crafted for the way you play.</p>
+        <a class="btn btn-ghost btn-sm footer-store" href="#download" data-store-link><svg class="i" aria-hidden="true"><use href="#i-download"/></svg><span><span data-store-kicker>Coming soon to</span> Google Play</span></a>
+      </div>
+      <nav class="footer-col" aria-labelledby="footer-product">
+        <h2 id="footer-product">Product</h2>
+        <ul><li><a href="#tuner">The tuner</a></li><li><a href="#tunings">Tunings</a></li><li><a href="#toolkit">Toolkit</a></li><li><a href="#appearance">Appearance</a></li><li><a href="#details">The details</a></li></ul>
+      </nav>
+      <nav class="footer-col" aria-labelledby="footer-toolkit">
+        <h2 id="footer-toolkit">Toolkit</h2>
+        <ul><li><a href="#tool-metronome">Metronome</a></li><li><a href="#tool-fret-calculator">Fret calculator</a></li><li><a href="#tool-drone">Drone</a></li><li><a href="#tool-string-tension">String tension</a></li><li><a href="#tool-transposer">Transposer</a></li><li><a href="#tool-chord-library">Chord library</a></li></ul>
+      </nav>
+      <nav class="footer-col" aria-labelledby="footer-support">
+        <h2 id="footer-support">Support</h2>
+        <ul><li><a href="#faq">Help &amp; FAQ</a></li><li data-if-contact hidden><a href="privacy.html#contact" data-contact-link>Contact us</a></li><li><a href="privacy.html#contact">Privacy questions</a></li></ul>
+      </nav>
+      <nav class="footer-col" aria-labelledby="footer-legal">
+        <h2 id="footer-legal">Legal</h2>
+        <ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms and Conditions</a></li></ul>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span data-year>2026</span> TuneForge. All rights reserved.</p>
+      <p class="footer-trademarks">Android and Google Play are trademarks of Google LLC.</p>
+      <a class="back-to-top" href="#top">Back to top <svg class="i" aria-hidden="true"><use href="#i-arrow-up"/></svg></a>
+    </div>
+    <p class="footer-wordmark" aria-hidden="true">TuneForge</p>
+  </footer>
+</body>
+</html>
